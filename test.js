@@ -8,7 +8,6 @@ chai.use(chaiHttp);
 describe('Logs', () => {
     it('POST', (done) => {
         let log = {
-            timestamp: new Date(),
             key: "testKey",
             len: 10
         }

@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.post('/log', (req, res) => {
     const newLog = new Log({
-        timestamp: req.body.timestamp,
+        timestamp: new Date(),
         key: req.body.key,
         len: req.body.len
     });
