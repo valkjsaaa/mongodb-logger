@@ -1,0 +1,15 @@
+version: '3'
+services:
+  log-server:
+    image: 207m/mongodb-logger
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=${MONGODB_URL}
+
+  mongoku:
+    image: huggingface/mongoku
+    ports:
+      - "5001:3100"
+    environment:
+      - MONGOKU_DEFAULT_HOST=${MONGODB_URL}
