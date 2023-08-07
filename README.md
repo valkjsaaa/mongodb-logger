@@ -7,6 +7,7 @@
     MONGODB_USERNAME=admin
     MONGODB_PASSWORD=xxxxx
     MONGODB_HOST=mongo:27017
+    MONGODB_DATABASE=yyyyy
     ```
 
 2. Run `docker compose up -d`
