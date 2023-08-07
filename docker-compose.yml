@@ -30,3 +30,4 @@ services:
     healthcheck:
       test: mongosh --eval 'db.runCommand("ping").ok' --quiet
       interval: 2s
+      retries: 10
