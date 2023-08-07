@@ -1,10 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+
 const app = express();
 app.use(cors());
+app.use(morgan('combined'));
 
 const mongodbUri = `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}/${process.env.MONGODB_DATABASE}`;
 mongoose.connect(mongodbUri, { useNewUrlParser: true, useUnifiedTopology: true })
