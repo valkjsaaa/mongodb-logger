@@ -9,6 +9,7 @@
     MONGODB_HOST=mongo:27017
     MONGODB_DATABASE=yyyyy
     ```
+    Due to some initialization limit, database other than `admin` needs to be manually created.
 
 2. Run `docker compose up -d`
 

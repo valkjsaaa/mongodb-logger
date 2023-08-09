@@ -5,7 +5,10 @@ services:
     ports:
       - "6000:5000"
     environment:
-      - MONGODB_URI=mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}/admin
+      - MONGODB_USERNAME=${MONGODB_USERNAME}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
+      - MONGODB_HOST=${MONGODB_HOST}
+      - MONGODB_DATABASE=${MONGODB_DATABASE}
     depends_on:
       mongo:
         condition: service_healthy
