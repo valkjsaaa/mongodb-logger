@@ -19,7 +19,8 @@ const logSchema = new mongoose.Schema({
     timestamp: Date,
     key: String,
     len: Number,
-    request: String
+    request: String,
+    response: String
 });
 
 const Log = mongoose.model('Log', logSchema);
@@ -35,7 +36,8 @@ app.post('/log', (req, res) => {
         timestamp: new Date(),
         key: req.body.key,
         len: req.body.len,
-        request: req.body.request
+        request: req.body.request,
+        response: req.body.response
     });
 
     newLog.save()
