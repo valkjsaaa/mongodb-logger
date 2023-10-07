@@ -18,7 +18,8 @@ mongoose.connect(mongodbUri, { useNewUrlParser: true, useUnifiedTopology: true }
 const logSchema = new mongoose.Schema({
     timestamp: Date,
     key: String,
-    len: Number
+    len: Number,
+    request: String
 });
 
 const Log = mongoose.model('Log', logSchema);
@@ -33,7 +34,8 @@ app.post('/log', (req, res) => {
     const newLog = new Log({
         timestamp: new Date(),
         key: req.body.key,
-        len: req.body.len
+        len: req.body.len,
+        request: req.body.request
     });
 
     newLog.save()
